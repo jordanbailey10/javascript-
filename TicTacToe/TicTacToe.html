@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <title>Play Tic Tac Toe!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <script src="./JS/tictactoe.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    </head>
+ 
+    <body id='body'>
+        <h1>TIC TAC TOE GAME</h1>
+        <!--container needed to overlay canvas over table-->
+        <div class='center-container'>
+            <!--Note: Canvas width and height must be set withing the element.-->
+            <canvas id='win-lines' width='608' height='608'></canvas>
+            <table>
+                <tr>
+                    <td id='0' onclick='placeXOrO("0")'></td>
+                    <td id='1' onclick='placeXOrO("1")'></td>
+                    <td id='2' onclick='placeXOrO("2")'></td>
+                </tr>
+                <tr>
+                    <td id='3' onclick='placeXOrO("3")'></td>
+                    <td id='4' onclick='placeXOrO("4")'></td>
+                    <td id='5' onclick='placeXOrO("5")'></td>
+                </tr>
+                <tr>
+                    <td id='6' onclick='placeXOrO("6")'></td>
+                    <td id='7' onclick='placeXOrO("7")'></td>
+                    <td id='8' onclick='placeXOrO("8")'></td>
+                </tr>
+            </table>
+        </div>
+   
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
