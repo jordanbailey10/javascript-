@@ -1,3 +1,4 @@
+  
 // this variable keeps track of who's turn it is.
 let activePlayer = 'X';
 //this array stores an array of moves. we use this to determine win conditions.
@@ -105,7 +106,7 @@ function checkWinConditions()  {
     //and 9squares are selected, the code executes
     else if (selectedSquares.length >= 9) {
         //this function plays the tie game sound
-        Audio('./media/tie.mp3');
+        audio('./media/tie.mp3');
         //this fumction sets a .3 secod timer before the resetGame is called
         setTimeout(function () { resetGame(); }, 1000);
     }
@@ -133,7 +134,7 @@ function disableClick() {
 //this function takes a strig parameter of the path you set ealier for placesment sound/place.mp3
 function audio(audioURL) {
     //we create a new audio object and we pass the path as a parameter
-    let audio = new Audio(audioURL)
+    let audio = new audio(audioURL)
 //play method plays our audio
     audio.play();
 }
@@ -183,7 +184,7 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
                 //this condition is adds 10 to the previous end y point 
                 if ( y < y2) { y += 10; }
                 //this condition cancels our animation loop if reach the end points
-                if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }                }
+                if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }                
             }
             //this condition is similar to the one above
             //it was necessary for the 6 4 2 condition
@@ -206,9 +207,9 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
             //this line disallows clicking while the win sound is playing
             disableClick();
             //this line plays the win sounds
-            Audio('./media/winGame.mp3');
+            audio('./media/winGame.mp3');
             //thsi line calls our main animation loop
-            animateLineDrawing();
+            animateLineDrawing();  }
             //this line waits 1 second. 
             //then, clears canvas, resets game, and allows clicking again.
             setTimeout(function () { clear (); resetGame(); }, 1000); 
@@ -225,4 +226,3 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
                 //this resets our array so it is empty and we can start over.
                 selectedSquares = [];
             }
-        
