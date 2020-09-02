@@ -1,12 +1,13 @@
+  
 <!DOCTYPE html>
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 
-<script>
+<script> // creating function
 $(document).ready(function() {
-    $("html").append(
+    $("html").append( //when loaded go to following container, we id the container, inner and the paragraphs
         "<body>\
         <div id='container'>\
         <div id='inner'>\
@@ -17,7 +18,7 @@ $(document).ready(function() {
         </div>\
     </div>\
     </body>"
-    );
+    );//here we make the text color red in paragraph 2 and make a function that hides the text when we click on paragraph 3
     $("#2").css({"color":"red"});
     $("#3").click(function() {
         $('h1').hide();
