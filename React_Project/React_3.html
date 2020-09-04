@@ -4,41 +4,26 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin>
-</script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin>
-</script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <!--linking to react libraries and JSX library-->
+    <script scr="https://unpkg.com/react@16/umd/react.development.js"
+    crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    crossorigin></script>
+    <script src="https:unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+   
   </head>
   <body>
-      <div id="like_button_container"></div>
-   <script>
-       const X = React.createElement;
-
-       class likeButton extends React.Component { 
-           constructor(props) { //constructor creates object within a class
-               super(props);//props is short for properties, supercalls on a constructor
-               this.state = { liked: false };
-           }
-           render() {
-               if (this.state.liked) {
-                   return 'You clicked the like button';
-               }
-               
-               return X(
-                   'button',
-                   { onClick: () => this.setState({ liked: true}) }, //setstate schedules a UI update
-                   'Like'
-               );
-           }
-       }
-
-       const domContainer = document.querySelector('#like_button_container');
-       ReactDOM.render(X(likeButton), domContainer);
-   </script>
+   <div id='JSX'></div>
+   <script type="text/babel">
+    class Greeting extends React.Component {
+        render() {
+            return <h1>My first JSX code!</h1>
+        }
+    }
+    ReactDOM.render(<Greeting />, document.getElementById('JSX'))
+</script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
