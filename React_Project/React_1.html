@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="react.js"></script> <!--linking react files-->
+    <script src="react-dom.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+  <body>
+  <div id="My_React_Code"></div>
+    <script> // creating component class
+        var Counter = React.createClass({
+            render: function() { //creating variables 
+                var time_Passed = Math.round(this.props.time_Passed / 100); //? is a conditional operator that checks wether or not a condition is true 
+                var seconds_Passed = time_Passed / 10 + (time_Passed % 10 ? '' : '.0');//% finds remainder
+                var text = 'My React code started running ' + seconds_Passed + ' seconds ago!';
+                return React.DOM.p(null,text);
+            }
+        });
+//react.factory creates a function that genereates a factory (object that can create other objects)
+        var counter_Factory = React.createFactory(Counter);
+
+        var start_Counting = new Date().getTime();
+        setInterval(function()  { //setinterval method evaluates expression at specified intervals
+            ReactDOM.render(
+                counter_Factory({time_Passed: new Date().getTime() - start_Counting}),
+                document.getElementByID('My_React_Code')
+            );
+        }, 50);
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
