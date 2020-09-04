@@ -28,7 +28,7 @@
         setInterval(function()  { //setinterval method evaluates expression at specified intervals
             ReactDOM.render(
                 counter_Factory({time_Passed: new Date().getTime() - start_Counting}),
-                document.getElementByID('My_React_Code')
+                document.getElementById('My_React_Code')
             );
         }, 50);
 
