@@ -134,7 +134,7 @@ function disableClick() {
 //this function takes a strig parameter of the path you set ealier for placesment sound/place.mp3
 function audio(audioURL) {
     //we create a new audio object and we pass the path as a parameter
-    let audio = new audio(audioURL)
+    let audio = new Audio(audioURL)
 //play method plays our audio
     audio.play();
 }
@@ -209,11 +209,11 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
             //this line plays the win sounds
             audio('./media/winGame.mp3');
             //thsi line calls our main animation loop
-            animateLineDrawing();  }
+            animateLineDrawing();  
             //this line waits 1 second. 
             //then, clears canvas, resets game, and allows clicking again.
             setTimeout(function () { clear (); resetGame(); }, 1000); 
-        
+        }
             //this function resets the game in a tie or win
             function resetGame() {
                 //this loop iterates through each HTML square element
