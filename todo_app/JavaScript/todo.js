@@ -32,11 +32,15 @@ function show() {
     var todos = get_todos();
 
     /*This sets up each task as an unordered list*/
-    var html = '<ul>';
+    var html = '<ul>'
     /*this displays a task to the list in the order that it is inputed*/
     for (var i = 0; i < todos.length; i++) {
         /*this also displays the taskas a list and creates the button with the "x"*/
         html += '<li>' + todos[i] + '<button class="remove" id="' + i + '">x</button></li>';
+    };
+    html += '</ul'>
+    document.getElementById('todos').innerHTML = html;
+
      /* this tells the browser to displaythe todo array after an item has been removed */
      var buttons = document.getElementsByClassName('remove');
      for (var i = 0;i < buttons.length; i++) {
@@ -44,17 +48,6 @@ function show() {
 
      
     };
-
-    html += '</ul>';
-    /*this displays the task as a list*/
-    document.getElementById('todos').innerHTML = html;
-
-}
-/*this displays the inputed task when the 'add item' button is clicked*/
-document.getElementById('add').addEventListener('click', add);
-/*this will keep the inputs displayed permanently on the screen*/
-show();
-
 /*REMOVE BUTTON FUNCTION*/
 function remove() {
     var id = this.getAttribute('id');
@@ -62,6 +55,13 @@ function remove() {
     todos.splice(id, 1);
     localStorage.setItem('todo', JSON.stringify(todos));
     /*this looks in the show function to display a removed item on the screen*/
+    show();
 
     return false;
 }
+
+}
+/*this displays the inputed task when the 'add item' button is clicked*/
+document.getElementById('add').addEventListener('click', add);
+/*this will keep the inputs displayed permanently on the screen*/
+show();
